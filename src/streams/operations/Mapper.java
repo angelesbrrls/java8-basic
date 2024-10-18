@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Mapper {
 	
     public static void main(String[] args) {
-        List<String> nombres = Arrays.asList("Luke", "Brandon", "Steve", "David");
+        List<String> nombres = Arrays.asList("Luke", "Brandon", "Steve", "David", "Diana", "Donna");
 
         Map<Character, List<String>> agrupados = nombres.stream()
                 .collect(Collectors.groupingBy(nombre -> nombre.charAt(0))); 
