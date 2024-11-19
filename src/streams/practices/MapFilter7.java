@@ -2,17 +2,19 @@ package streams.practices;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.OptionalDouble;
 
 import streams.practices.models.Empleado;
 
+
+
 /*
- * Filtrar empleados con salario superior a 4000.
- * Aumentar su salario en un 10%.
- * Mostrar los nombres.
+ * Filtrar empleados cuya edad sea mayor o igual a 30.
+ * Calcular el promedio de salario de los empleados filtrados.
  * */
-public class MapFilter4 {
+public class MapFilter7 {
 	public static void main(String[] args) {
+		
 		List<Empleado> empleados = Arrays.asList(
 			    new Empleado("Juan", 28, 3000),
 			    new Empleado("Ana", 35, 4500),
@@ -21,13 +23,11 @@ public class MapFilter4 {
 			    new Empleado("Luis", 45, 5500)
 			);
 		
-		List<String> resultado = empleados.stream().filter(e -> e.getSalario() > 4000)
-				.map( e -> {
-					e.setSalario(e.getSalario() * 1.10);
-					return e.getNombre();
-				}).collect(Collectors.toList());
+		OptionalDouble  resultado = empleados.stream()
+				.filter(e -> e.getEdad() >= 30)
+				.mapToDouble(Empleado::getSalario)
+				.average();
 		
-		System.out.println(resultado.toString());
-		
+		System.out.println(resultado.orElse(0));
 	}
 }

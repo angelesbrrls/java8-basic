@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import streams.practices.models.Empleado;
+
 /* Filtra los empleados que tienen más de 30 años, 
  * luego aumenta su salario en un 20% 
  * y finalmente crea una lista de nombres de esos empleados.*/
@@ -40,48 +42,5 @@ public class MapFilter1 {
 
 }
 
-class Empleado{
-
-	String nombre;
-	int edad;
-	double salario;
-	
-	public Empleado(String nombre, int edad, double salario) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.salario = salario;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-	public double getSalario() {
-		return salario;
-	}
-
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
-
-	@Override
-	public String toString() {
-		return "Empleado [nombre=" + nombre + ", edad=" + edad + ", salario=" + salario + "]";
-	}
-	
-	
-}
 
 
